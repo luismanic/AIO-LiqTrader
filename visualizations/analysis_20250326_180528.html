@@ -1,0 +1,387 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>AIO-LiqTrader Analysis Report - 20250326_180528</title>
+            <style>
+                body { font-family: Arial, sans-serif; margin: 20px; }
+                .container { max-width: 1200px; margin: 0 auto; }
+                .header { background-color: #333; color: white; padding: 10px; text-align: center; }
+                .section { margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; }
+                .section-title { background-color: #f0f0f0; padding: 5px; margin-bottom: 10px; }
+                .summary-stats { display: flex; flex-wrap: wrap; }
+                .stat-box { flex: 1; min-width: 200px; margin: 5px; padding:
+                 10px; border: 1px solid #ddd; text-align: center; }
+                .stat-value { font-size: 24px; font-weight: bold; margin-bottom: 5px; }
+                .stat-label { font-size: 14px; color: #666; }
+                .chart { width: 100%; height: 400px; margin-top: 20px; }
+                table { width: 100%; border-collapse: collapse; }
+                th, td { padding: 8px; text-align: left; border-bottom: 1px solid #ddd; }
+                th { background-color: #f2f2f2; }
+                tr:hover { background-color: #f5f5f5; }
+                .very_strong { color: #FF0000; font-weight: bold; }
+                .strong { color: #FF6600; font-weight: bold; }
+                .moderate { color: #FFCC00; }
+                .weak { color: #00CC00; }
+                .buy { color: green; }
+                .sell { color: red; }
+                .screenshot { max-width: 100%; margin-top: 20px; border: 1px solid #ddd; }
+            </style>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        </head>
+        <body>
+            <div class="container">
+                <div class="header">
+                    <h1>AIO-LiqTrader Analysis Report</h1>
+                    <p>Generated on: 2025-03-26 18:05:30</p>
+                </div>
+                
+                <div class="section">
+                    <div class="section-title">
+                        <h2>Summary Statistics</h2>
+                    </div>
+                    
+                    <div class="summary-stats">
+                        <div class="stat-box">
+                            <div class="stat-value">16</div>
+                            <div class="stat-label">Order Profile Lines</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value">0</div>
+                            <div class="stat-label">Limit Orders</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value">1</div>
+                            <div class="stat-label">Liquidation Zones</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value">5.00</div>
+                            <div class="stat-label">USD/pixel</div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart">
+                        <canvas id="strengthDistribution"></canvas>
+                    </div>
+                </div>
+        
+                <div class="section">
+                    <div class="section-title">
+                        <h2>Order Profile Lines</h2>
+                    </div>
+                    
+                    <table id="profileLinesTable">
+                        <tr>
+                            <th>Price (USD)</th>
+                            <th>Color</th>
+                            <th>Length (px)</th>
+                            <th>Strength</th>
+                            <th>Score</th>
+                        </tr>
+        
+                        <tr>
+                            <td>$87170.00</td>
+                            <td>Yellow</td>
+                            <td>863</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.33</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87165.00</td>
+                            <td>Yellow</td>
+                            <td>863</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.33</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87160.00</td>
+                            <td>Yellow</td>
+                            <td>863</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.33</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87155.00</td>
+                            <td>Yellow</td>
+                            <td>863</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.33</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87150.00</td>
+                            <td>Yellow</td>
+                            <td>863</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.33</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87145.00</td>
+                            <td>Yellow</td>
+                            <td>863</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.33</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87140.00</td>
+                            <td>Yellow</td>
+                            <td>863</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.33</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87135.00</td>
+                            <td>Yellow</td>
+                            <td>863</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.33</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87130.00</td>
+                            <td>Yellow</td>
+                            <td>863</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.33</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87190.00</td>
+                            <td>Yellow</td>
+                            <td>853</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.32</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87185.00</td>
+                            <td>Yellow</td>
+                            <td>853</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.32</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87180.00</td>
+                            <td>Yellow</td>
+                            <td>853</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.32</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87175.00</td>
+                            <td>Yellow</td>
+                            <td>853</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.32</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87205.00</td>
+                            <td>Yellow</td>
+                            <td>538</td>
+                            <td class="weak">Weak</td>
+                            <td>0.00</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87200.00</td>
+                            <td>Yellow</td>
+                            <td>538</td>
+                            <td class="weak">Weak</td>
+                            <td>0.00</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87195.00</td>
+                            <td>Yellow</td>
+                            <td>538</td>
+                            <td class="weak">Weak</td>
+                            <td>0.00</td>
+                        </tr>
+            
+                    </table>
+                    
+                    <div class="chart">
+                        <canvas id="priceLevelsChart"></canvas>
+                    </div>
+                </div>
+        
+                <div class="section">
+                    <div class="section-title">
+                        <h2>Limit Orders Analysis</h2>
+                    </div>
+                    
+                    <div class="chart">
+                        <canvas id="orderTypesChart"></canvas>
+                    </div>
+                </div>
+        
+                <div class="section">
+                    <div class="section-title">
+                        <h2>Liquidation Zones</h2>
+                    </div>
+                    
+                    <table id="liquidationTable">
+                        <tr>
+                            <th>Price (USD)</th>
+                            <th>Length (px)</th>
+                        </tr>
+        
+                        <tr>
+                            <td>$87545.00</td>
+                            <td>191</td>
+                        </tr>
+            
+                    </table>
+                </div>
+        
+                <div class="section">
+                    <div class="section-title">
+                        <h2>Analysis Screenshot</h2>
+                    </div>
+                    <img class="screenshot" src="..\screenshots\screenshot_20250326_180527.png" alt="Analysis Screenshot">
+                </div>
+            
+                <script>
+                    // Strength Distribution Chart
+                    const strengthCtx = document.getElementById('strengthDistribution').getContext('2d');
+                    new Chart(strengthCtx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['Very Strong', 'Strong', 'Moderate', 'Weak'],
+                            datasets: [{
+                                label: 'Number of Lines',
+                                data: [
+        0, 0, 13, 3
+                                ],
+                                backgroundColor: [
+                                    '#FF0000',
+                                    '#FF6600',
+                                    '#FFCC00',
+                                    '#00CC00'
+                                ]
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                title: {
+                                    display: true,
+                                    text: 'Line Strength Distribution'
+                                },
+                            }
+                        }
+                    });
+
+                    // Price Levels Chart
+                    const priceCtx = document.getElementById('priceLevelsChart').getContext('2d');
+                    new Chart(priceCtx, {
+                        type: 'scatter',
+                        data: {
+                            datasets: [
+        
+                                {
+                                    label: 'Very strong Lines',
+                                    data: [
+            
+                                    ],
+                                    backgroundColor: '#FF0000',
+                                    pointRadius: 5,
+                                },
+            
+                                {
+                                    label: 'Strong Lines',
+                                    data: [
+            
+                                    ],
+                                    backgroundColor: '#FF6600',
+                                    pointRadius: 5,
+                                },
+            
+                                {
+                                    label: 'Moderate Lines',
+                                    data: [
+            {x: 853, y: 87190.0, r: 6}, {x: 853, y: 87185.0, r: 6}, {x: 853, y: 87180.0, r: 6}, {x: 853, y: 87175.0, r: 6}, {x: 863, y: 87170.0, r: 6}, {x: 863, y: 87165.0, r: 6}, {x: 863, y: 87160.0, r: 6}, {x: 863, y: 87155.0, r: 6}, {x: 863, y: 87150.0, r: 6}, {x: 863, y: 87145.0, r: 6}, {x: 863, y: 87140.0, r: 6}, {x: 863, y: 87135.0, r: 6}, {x: 863, y: 87130.0, r: 6}
+                                    ],
+                                    backgroundColor: '#FFCC00',
+                                    pointRadius: 5,
+                                },
+            
+                                {
+                                    label: 'Weak Lines',
+                                    data: [
+            {x: 538, y: 87205.0, r: 5}, {x: 538, y: 87200.0, r: 5}, {x: 538, y: 87195.0, r: 5}
+                                    ],
+                                    backgroundColor: '#00CC00',
+                                    pointRadius: 5,
+                                },
+            
+                            ]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                title: {
+                                    display: true,
+                                    text: 'Order Profile Lines by Price and Length'
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(context) {
+                                            return `Price: $${context.parsed.y.toFixed(2)}, Length: ${context.parsed.x}px`;
+                                        }
+                                    }
+                                }
+                            },
+                            scales: {
+                                x: {
+                                    title: {
+                                        display: true,
+                                        text: 'Line Length (pixels)'
+                                    }
+                                },
+                                y: {
+                                    title: {
+                                        display: true,
+                                        text: 'Price (USD)'
+                                    }
+                                }
+                            }
+                        }
+                    });
+
+                    // Order Types Chart
+                    const orderCtx = document.getElementById('orderTypesChart').getContext('2d');
+        
+                    new Chart(orderCtx, {
+                        type: 'pie',
+                        data: {
+                            labels: ['Buy Orders', 'Sell Orders'],
+                            datasets: [{
+                                data: [0, 0],
+                                backgroundColor: ['green', 'red']
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                title: {
+                                    display: true,
+                                    text: 'Limit Order Distribution'
+                                }
+                            }
+                        }
+                    });
+                </script>
+            </div>
+        </body>
+        </html>
+        

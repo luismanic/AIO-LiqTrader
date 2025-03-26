@@ -1,0 +1,100 @@
+# AIO-LiqTrader: AI-Driven Bitcoin Liquidity Trading Strategy
+
+## Project Overview
+AIO-LiqTrader is an advanced algorithmic trading system designed for Bitcoin trading, leveraging computer vision and machine learning techniques to analyze order book liquidity, trading volumes, and market structure in real-time.
+
+## System Architecture
+The project is a comprehensive trading analysis system with the following key components:
+
+### 1. Screenshot Manager (screenshot.py)
+- Captures screenshots of trading charts
+- Detects and selects target monitor and trading window
+- Saves screenshots for analysis and debugging
+
+### 2. Analysis Engine (analysis.py)
+Performs complex image processing and analysis:
+- Detects order profile lines
+- Identifies limit order clusters
+- Locates liquidation zones
+- Analyzes volume behavior
+- Uses advanced computer vision techniques with OpenCV
+- Implements pixel-to-price ratio calculation
+
+### 3. Trading Engine (trading.py)
+- Evaluates analysis results
+- Generates trading signals
+- Calculates confidence scores
+- Determines trade direction (long/short)
+- Sends alerts via Discord webhook
+
+### 4. Visualization Engine (visualization.py)
+- Creates comprehensive visual reports
+- Generates interactive HTML analysis reports
+- Produces charts and statistical summaries
+- Supports debugging and performance tracking
+
+## Key Technologies
+- Python 3.9+
+- Computer Vision (OpenCV)
+- Matplotlib
+- Numpy
+- Requests
+- Logging
+- Configuration Management
+
+## Prerequisites
+1. Python 3.9 or higher
+2. Tesseract OCR (for text recognition)
+3. Required Python packages (see requirements.txt)
+
+## Installation Steps
+1. Clone the repository
+2. Create a virtual environment:
+   ```
+   python -m venv venv
+   source venv/bin/activate  # On Windows use: venv\Scripts\activate
+   ```
+3. Install dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+4. Install Tesseract OCR from official website
+5. Configure config.ini with your specific settings
+
+## Configuration
+Edit config.ini to customize:
+- Screenshot intervals
+- Target monitor
+- Trading platform keywords
+- API credentials
+- Confidence thresholds
+- Debug mode settings
+
+## Running the Trader
+```
+python main.py
+```
+
+## Logging
+- Detailed logs saved in aio_liqtrader.log
+- Console logging provides real-time updates
+- Debug mode generates additional diagnostic information
+
+## Safety and Disclaimer
+- This is an experimental trading tool
+- Always test thoroughly in simulated environments
+- Never risk more capital than you can afford to lose
+- Consult financial professionals before algorithmic trading
+
+## Contribution Guidelines
+1. Fork the repository
+2. Create feature branches
+3. Write comprehensive tests
+4. Update documentation
+5. Submit pull requests with detailed descriptions
+
+## Future Roadmap
+- Enhanced machine learning integration
+- Multi-exchange support
+- Advanced risk management
+- More sophisticated signal generation

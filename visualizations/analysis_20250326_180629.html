@@ -1,0 +1,270 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>AIO-LiqTrader Analysis Report - 20250326_180629</title>
+            <style>
+                body { font-family: Arial, sans-serif; margin: 20px; }
+                .container { max-width: 1200px; margin: 0 auto; }
+                .header { background-color: #333; color: white; padding: 10px; text-align: center; }
+                .section { margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; }
+                .section-title { background-color: #f0f0f0; padding: 5px; margin-bottom: 10px; }
+                .summary-stats { display: flex; flex-wrap: wrap; }
+                .stat-box { flex: 1; min-width: 200px; margin: 5px; padding:
+                 10px; border: 1px solid #ddd; text-align: center; }
+                .stat-value { font-size: 24px; font-weight: bold; margin-bottom: 5px; }
+                .stat-label { font-size: 14px; color: #666; }
+                .chart { width: 100%; height: 400px; margin-top: 20px; }
+                table { width: 100%; border-collapse: collapse; }
+                th, td { padding: 8px; text-align: left; border-bottom: 1px solid #ddd; }
+                th { background-color: #f2f2f2; }
+                tr:hover { background-color: #f5f5f5; }
+                .very_strong { color: #FF0000; font-weight: bold; }
+                .strong { color: #FF6600; font-weight: bold; }
+                .moderate { color: #FFCC00; }
+                .weak { color: #00CC00; }
+                .buy { color: green; }
+                .sell { color: red; }
+                .screenshot { max-width: 100%; margin-top: 20px; border: 1px solid #ddd; }
+            </style>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        </head>
+        <body>
+            <div class="container">
+                <div class="header">
+                    <h1>AIO-LiqTrader Analysis Report</h1>
+                    <p>Generated on: 2025-03-26 18:06:31</p>
+                </div>
+                
+                <div class="section">
+                    <div class="section-title">
+                        <h2>Summary Statistics</h2>
+                    </div>
+                    
+                    <div class="summary-stats">
+                        <div class="stat-box">
+                            <div class="stat-value">2</div>
+                            <div class="stat-label">Order Profile Lines</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value">0</div>
+                            <div class="stat-label">Limit Orders</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value">0</div>
+                            <div class="stat-label">Liquidation Zones</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value">271.93</div>
+                            <div class="stat-label">USD/pixel</div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart">
+                        <canvas id="strengthDistribution"></canvas>
+                    </div>
+                </div>
+        
+                <div class="section">
+                    <div class="section-title">
+                        <h2>Order Profile Lines</h2>
+                    </div>
+                    
+                    <table id="profileLinesTable">
+                        <tr>
+                            <th>Price (USD)</th>
+                            <th>Color</th>
+                            <th>Length (px)</th>
+                            <th>Strength</th>
+                            <th>Score</th>
+                        </tr>
+        
+                        <tr>
+                            <td>$87552.67</td>
+                            <td>White</td>
+                            <td>1535</td>
+                            <td class="very_strong">Very strong</td>
+                            <td>1.00</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87280.74</td>
+                            <td>White</td>
+                            <td>1535</td>
+                            <td class="very_strong">Very strong</td>
+                            <td>1.00</td>
+                        </tr>
+            
+                    </table>
+                    
+                    <div class="chart">
+                        <canvas id="priceLevelsChart"></canvas>
+                    </div>
+                </div>
+        
+                <div class="section">
+                    <div class="section-title">
+                        <h2>Limit Orders Analysis</h2>
+                    </div>
+                    
+                    <div class="chart">
+                        <canvas id="orderTypesChart"></canvas>
+                    </div>
+                </div>
+        
+                <div class="section">
+                    <div class="section-title">
+                        <h2>Liquidation Zones</h2>
+                    </div>
+                    
+                    <table id="liquidationTable">
+                        <tr>
+                            <th>Price (USD)</th>
+                            <th>Length (px)</th>
+                        </tr>
+        
+                    </table>
+                </div>
+        
+                <div class="section">
+                    <div class="section-title">
+                        <h2>Analysis Screenshot</h2>
+                    </div>
+                    <img class="screenshot" src="..\screenshots\screenshot_20250326_180627.png" alt="Analysis Screenshot">
+                </div>
+            
+                <script>
+                    // Strength Distribution Chart
+                    const strengthCtx = document.getElementById('strengthDistribution').getContext('2d');
+                    new Chart(strengthCtx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['Very Strong', 'Strong', 'Moderate', 'Weak'],
+                            datasets: [{
+                                label: 'Number of Lines',
+                                data: [
+        2, 0, 0, 0
+                                ],
+                                backgroundColor: [
+                                    '#FF0000',
+                                    '#FF6600',
+                                    '#FFCC00',
+                                    '#00CC00'
+                                ]
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                title: {
+                                    display: true,
+                                    text: 'Line Strength Distribution'
+                                },
+                            }
+                        }
+                    });
+
+                    // Price Levels Chart
+                    const priceCtx = document.getElementById('priceLevelsChart').getContext('2d');
+                    new Chart(priceCtx, {
+                        type: 'scatter',
+                        data: {
+                            datasets: [
+        
+                                {
+                                    label: 'Very strong Lines',
+                                    data: [
+            {x: 1535, y: 87552.6665625, r: 20}, {x: 1535, y: 87280.740625, r: 20}
+                                    ],
+                                    backgroundColor: '#FF0000',
+                                    pointRadius: 5,
+                                },
+            
+                                {
+                                    label: 'Strong Lines',
+                                    data: [
+            
+                                    ],
+                                    backgroundColor: '#FF6600',
+                                    pointRadius: 5,
+                                },
+            
+                                {
+                                    label: 'Moderate Lines',
+                                    data: [
+            
+                                    ],
+                                    backgroundColor: '#FFCC00',
+                                    pointRadius: 5,
+                                },
+            
+                                {
+                                    label: 'Weak Lines',
+                                    data: [
+            
+                                    ],
+                                    backgroundColor: '#00CC00',
+                                    pointRadius: 5,
+                                },
+            
+                            ]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                title: {
+                                    display: true,
+                                    text: 'Order Profile Lines by Price and Length'
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(context) {
+                                            return `Price: $${context.parsed.y.toFixed(2)}, Length: ${context.parsed.x}px`;
+                                        }
+                                    }
+                                }
+                            },
+                            scales: {
+                                x: {
+                                    title: {
+                                        display: true,
+                                        text: 'Line Length (pixels)'
+                                    }
+                                },
+                                y: {
+                                    title: {
+                                        display: true,
+                                        text: 'Price (USD)'
+                                    }
+                                }
+                            }
+                        }
+                    });
+
+                    // Order Types Chart
+                    const orderCtx = document.getElementById('orderTypesChart').getContext('2d');
+        
+                    new Chart(orderCtx, {
+                        type: 'pie',
+                        data: {
+                            labels: ['Buy Orders', 'Sell Orders'],
+                            datasets: [{
+                                data: [0, 0],
+                                backgroundColor: ['green', 'red']
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                title: {
+                                    display: true,
+                                    text: 'Limit Order Distribution'
+                                }
+                            }
+                        }
+                    });
+                </script>
+            </div>
+        </body>
+        </html>
+        

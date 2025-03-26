@@ -1,0 +1,989 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>AIO-LiqTrader Analysis Report - 20250326_175525</title>
+            <style>
+                body { font-family: Arial, sans-serif; margin: 20px; }
+                .container { max-width: 1200px; margin: 0 auto; }
+                .header { background-color: #333; color: white; padding: 10px; text-align: center; }
+                .section { margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; }
+                .section-title { background-color: #f0f0f0; padding: 5px; margin-bottom: 10px; }
+                .summary-stats { display: flex; flex-wrap: wrap; }
+                .stat-box { flex: 1; min-width: 200px; margin: 5px; padding:
+                 10px; border: 1px solid #ddd; text-align: center; }
+                .stat-value { font-size: 24px; font-weight: bold; margin-bottom: 5px; }
+                .stat-label { font-size: 14px; color: #666; }
+                .chart { width: 100%; height: 400px; margin-top: 20px; }
+                table { width: 100%; border-collapse: collapse; }
+                th, td { padding: 8px; text-align: left; border-bottom: 1px solid #ddd; }
+                th { background-color: #f2f2f2; }
+                tr:hover { background-color: #f5f5f5; }
+                .very_strong { color: #FF0000; font-weight: bold; }
+                .strong { color: #FF6600; font-weight: bold; }
+                .moderate { color: #FFCC00; }
+                .weak { color: #00CC00; }
+                .buy { color: green; }
+                .sell { color: red; }
+                .screenshot { max-width: 100%; margin-top: 20px; border: 1px solid #ddd; }
+            </style>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        </head>
+        <body>
+            <div class="container">
+                <div class="header">
+                    <h1>AIO-LiqTrader Analysis Report</h1>
+                    <p>Generated on: 2025-03-26 17:55:27</p>
+                </div>
+                
+                <div class="section">
+                    <div class="section-title">
+                        <h2>Summary Statistics</h2>
+                    </div>
+                    
+                    <div class="summary-stats">
+                        <div class="stat-box">
+                            <div class="stat-value">90</div>
+                            <div class="stat-label">Order Profile Lines</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value">646</div>
+                            <div class="stat-label">Limit Orders</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value">3</div>
+                            <div class="stat-label">Liquidation Zones</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value">5.00</div>
+                            <div class="stat-label">USD/pixel</div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart">
+                        <canvas id="strengthDistribution"></canvas>
+                    </div>
+                </div>
+        
+                <div class="section">
+                    <div class="section-title">
+                        <h2>Order Profile Lines</h2>
+                    </div>
+                    
+                    <table id="profileLinesTable">
+                        <tr>
+                            <th>Price (USD)</th>
+                            <th>Color</th>
+                            <th>Length (px)</th>
+                            <th>Strength</th>
+                            <th>Score</th>
+                        </tr>
+        
+                        <tr>
+                            <td>$89485.00</td>
+                            <td>White</td>
+                            <td>1535</td>
+                            <td class="very_strong">Very strong</td>
+                            <td>1.00</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89480.00</td>
+                            <td>White</td>
+                            <td>1535</td>
+                            <td class="very_strong">Very strong</td>
+                            <td>1.00</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89410.00</td>
+                            <td>White</td>
+                            <td>1535</td>
+                            <td class="very_strong">Very strong</td>
+                            <td>1.00</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89405.00</td>
+                            <td>White</td>
+                            <td>1535</td>
+                            <td class="very_strong">Very strong</td>
+                            <td>1.00</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89335.00</td>
+                            <td>White</td>
+                            <td>1535</td>
+                            <td class="very_strong">Very strong</td>
+                            <td>1.00</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89330.00</td>
+                            <td>White</td>
+                            <td>1535</td>
+                            <td class="very_strong">Very strong</td>
+                            <td>1.00</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89110.00</td>
+                            <td>White</td>
+                            <td>1535</td>
+                            <td class="very_strong">Very strong</td>
+                            <td>1.00</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89105.00</td>
+                            <td>White</td>
+                            <td>1535</td>
+                            <td class="very_strong">Very strong</td>
+                            <td>1.00</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$88960.00</td>
+                            <td>White</td>
+                            <td>1535</td>
+                            <td class="very_strong">Very strong</td>
+                            <td>1.00</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$88955.00</td>
+                            <td>White</td>
+                            <td>1535</td>
+                            <td class="very_strong">Very strong</td>
+                            <td>1.00</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$88810.00</td>
+                            <td>White</td>
+                            <td>1535</td>
+                            <td class="very_strong">Very strong</td>
+                            <td>1.00</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$88805.00</td>
+                            <td>White</td>
+                            <td>1535</td>
+                            <td class="very_strong">Very strong</td>
+                            <td>1.00</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$91150.00</td>
+                            <td>Orange</td>
+                            <td>881</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.34</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$91140.00</td>
+                            <td>Orange</td>
+                            <td>881</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.34</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$91135.00</td>
+                            <td>Orange</td>
+                            <td>881</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.34</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$88880.00</td>
+                            <td>Yellow</td>
+                            <td>880</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.34</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$88875.00</td>
+                            <td>Yellow</td>
+                            <td>880</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.34</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$88870.00</td>
+                            <td>Yellow</td>
+                            <td>880</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.34</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$88865.00</td>
+                            <td>Yellow</td>
+                            <td>880</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.34</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$88505.00</td>
+                            <td>Yellow</td>
+                            <td>880</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.34</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$88500.00</td>
+                            <td>Yellow</td>
+                            <td>880</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.34</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$88495.00</td>
+                            <td>Yellow</td>
+                            <td>880</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.34</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$88490.00</td>
+                            <td>Yellow</td>
+                            <td>880</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.34</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$88485.00</td>
+                            <td>Yellow</td>
+                            <td>880</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.34</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$91145.00</td>
+                            <td>Red</td>
+                            <td>873</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.33</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89400.00</td>
+                            <td>White</td>
+                            <td>866</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.32</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89395.00</td>
+                            <td>White</td>
+                            <td>866</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.32</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89390.00</td>
+                            <td>White</td>
+                            <td>866</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.32</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89385.00</td>
+                            <td>White</td>
+                            <td>866</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.32</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89380.00</td>
+                            <td>White</td>
+                            <td>866</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.32</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89375.00</td>
+                            <td>White</td>
+                            <td>863</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.32</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89460.00</td>
+                            <td>White</td>
+                            <td>844</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.30</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89350.00</td>
+                            <td>White</td>
+                            <td>844</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.30</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89345.00</td>
+                            <td>White</td>
+                            <td>844</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.30</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87190.00</td>
+                            <td>Yellow</td>
+                            <td>844</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.30</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87185.00</td>
+                            <td>Yellow</td>
+                            <td>844</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.30</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87180.00</td>
+                            <td>Yellow</td>
+                            <td>844</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.30</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87175.00</td>
+                            <td>Yellow</td>
+                            <td>844</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.30</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87170.00</td>
+                            <td>Yellow</td>
+                            <td>844</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.30</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87165.00</td>
+                            <td>White</td>
+                            <td>844</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.30</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87160.00</td>
+                            <td>White</td>
+                            <td>844</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.30</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87155.00</td>
+                            <td>White</td>
+                            <td>844</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.30</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87150.00</td>
+                            <td>White</td>
+                            <td>844</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.30</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87145.00</td>
+                            <td>White</td>
+                            <td>844</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.30</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87140.00</td>
+                            <td>White</td>
+                            <td>844</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.30</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87135.00</td>
+                            <td>White</td>
+                            <td>844</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.30</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87130.00</td>
+                            <td>White</td>
+                            <td>844</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.30</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89475.00</td>
+                            <td>White</td>
+                            <td>829</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.29</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89470.00</td>
+                            <td>White</td>
+                            <td>829</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.29</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89465.00</td>
+                            <td>White</td>
+                            <td>829</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.29</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89455.00</td>
+                            <td>White</td>
+                            <td>829</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.29</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89450.00</td>
+                            <td>White</td>
+                            <td>829</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.29</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89445.00</td>
+                            <td>White</td>
+                            <td>829</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.29</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89440.00</td>
+                            <td>White</td>
+                            <td>829</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.29</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89435.00</td>
+                            <td>White</td>
+                            <td>829</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.29</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89430.00</td>
+                            <td>White</td>
+                            <td>829</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.29</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89425.00</td>
+                            <td>White</td>
+                            <td>829</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.29</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89420.00</td>
+                            <td>White</td>
+                            <td>829</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.29</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89415.00</td>
+                            <td>White</td>
+                            <td>829</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.29</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89370.00</td>
+                            <td>White</td>
+                            <td>826</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.28</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89365.00</td>
+                            <td>White</td>
+                            <td>826</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.28</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89360.00</td>
+                            <td>White</td>
+                            <td>826</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.28</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89355.00</td>
+                            <td>White</td>
+                            <td>826</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.28</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89340.00</td>
+                            <td>White</td>
+                            <td>826</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.28</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$88860.00</td>
+                            <td>Yellow</td>
+                            <td>825</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.28</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$88855.00</td>
+                            <td>Yellow</td>
+                            <td>825</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.28</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$88510.00</td>
+                            <td>White</td>
+                            <td>823</td>
+                            <td class="moderate">Moderate</td>
+                            <td>0.28</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$91615.00</td>
+                            <td>White</td>
+                            <td>749</td>
+                            <td class="weak">Weak</td>
+                            <td>0.21</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$91610.00</td>
+                            <td>White</td>
+                            <td>749</td>
+                            <td class="weak">Weak</td>
+                            <td>0.21</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$91605.00</td>
+                            <td>White</td>
+                            <td>748</td>
+                            <td class="weak">Weak</td>
+                            <td>0.20</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$91600.00</td>
+                            <td>White</td>
+                            <td>745</td>
+                            <td class="weak">Weak</td>
+                            <td>0.20</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$91595.00</td>
+                            <td>White</td>
+                            <td>744</td>
+                            <td class="weak">Weak</td>
+                            <td>0.20</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$91620.00</td>
+                            <td>White</td>
+                            <td>730</td>
+                            <td class="weak">Weak</td>
+                            <td>0.19</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$91590.00</td>
+                            <td>White</td>
+                            <td>730</td>
+                            <td class="weak">Weak</td>
+                            <td>0.19</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$91625.00</td>
+                            <td>White</td>
+                            <td>714</td>
+                            <td class="weak">Weak</td>
+                            <td>0.17</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$91635.00</td>
+                            <td>White</td>
+                            <td>713</td>
+                            <td class="weak">Weak</td>
+                            <td>0.17</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$91630.00</td>
+                            <td>White</td>
+                            <td>710</td>
+                            <td class="weak">Weak</td>
+                            <td>0.17</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$91160.00</td>
+                            <td>Red</td>
+                            <td>694</td>
+                            <td class="weak">Weak</td>
+                            <td>0.15</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$91155.00</td>
+                            <td>Red</td>
+                            <td>694</td>
+                            <td class="weak">Weak</td>
+                            <td>0.15</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$88675.00</td>
+                            <td>White</td>
+                            <td>693</td>
+                            <td class="weak">Weak</td>
+                            <td>0.15</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$88670.00</td>
+                            <td>White</td>
+                            <td>693</td>
+                            <td class="weak">Weak</td>
+                            <td>0.15</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$88885.00</td>
+                            <td>White</td>
+                            <td>641</td>
+                            <td class="weak">Weak</td>
+                            <td>0.10</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87210.00</td>
+                            <td>Yellow</td>
+                            <td>595</td>
+                            <td class="weak">Weak</td>
+                            <td>0.05</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87205.00</td>
+                            <td>Yellow</td>
+                            <td>595</td>
+                            <td class="weak">Weak</td>
+                            <td>0.05</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87200.00</td>
+                            <td>Yellow</td>
+                            <td>595</td>
+                            <td class="weak">Weak</td>
+                            <td>0.05</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87195.00</td>
+                            <td>Yellow</td>
+                            <td>595</td>
+                            <td class="weak">Weak</td>
+                            <td>0.05</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87225.00</td>
+                            <td>Yellow</td>
+                            <td>586</td>
+                            <td class="weak">Weak</td>
+                            <td>0.04</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87220.00</td>
+                            <td>Yellow</td>
+                            <td>586</td>
+                            <td class="weak">Weak</td>
+                            <td>0.04</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$87215.00</td>
+                            <td>Yellow</td>
+                            <td>586</td>
+                            <td class="weak">Weak</td>
+                            <td>0.04</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$88905.00</td>
+                            <td>White</td>
+                            <td>546</td>
+                            <td class="weak">Weak</td>
+                            <td>0.00</td>
+                        </tr>
+            
+                    </table>
+                    
+                    <div class="chart">
+                        <canvas id="priceLevelsChart"></canvas>
+                    </div>
+                </div>
+        
+                <div class="section">
+                    <div class="section-title">
+                        <h2>Limit Orders Analysis</h2>
+                    </div>
+                    
+                    <div class="chart">
+                        <canvas id="orderTypesChart"></canvas>
+                    </div>
+                </div>
+        
+                <div class="section">
+                    <div class="section-title">
+                        <h2>Liquidation Zones</h2>
+                    </div>
+                    
+                    <table id="liquidationTable">
+                        <tr>
+                            <th>Price (USD)</th>
+                            <th>Length (px)</th>
+                        </tr>
+        
+                        <tr>
+                            <td>$87545.00</td>
+                            <td>140</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$89880.00</td>
+                            <td>145</td>
+                        </tr>
+            
+                        <tr>
+                            <td>$92265.00</td>
+                            <td>191</td>
+                        </tr>
+            
+                    </table>
+                </div>
+        
+                <div class="section">
+                    <div class="section-title">
+                        <h2>Analysis Screenshot</h2>
+                    </div>
+                    <img class="screenshot" src="..\screenshots\screenshot_20250326_175523.png" alt="Analysis Screenshot">
+                </div>
+            
+                <script>
+                    // Strength Distribution Chart
+                    const strengthCtx = document.getElementById('strengthDistribution').getContext('2d');
+                    new Chart(strengthCtx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['Very Strong', 'Strong', 'Moderate', 'Weak'],
+                            datasets: [{
+                                label: 'Number of Lines',
+                                data: [
+        12, 0, 55, 23
+                                ],
+                                backgroundColor: [
+                                    '#FF0000',
+                                    '#FF6600',
+                                    '#FFCC00',
+                                    '#00CC00'
+                                ]
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                title: {
+                                    display: true,
+                                    text: 'Line Strength Distribution'
+                                },
+                            }
+                        }
+                    });
+
+                    // Price Levels Chart
+                    const priceCtx = document.getElementById('priceLevelsChart').getContext('2d');
+                    new Chart(priceCtx, {
+                        type: 'scatter',
+                        data: {
+                            datasets: [
+        
+                                {
+                                    label: 'Very strong Lines',
+                                    data: [
+            {x: 1535, y: 89485.0, r: 20}, {x: 1535, y: 89480.0, r: 20}, {x: 1535, y: 89410.0, r: 20}, {x: 1535, y: 89405.0, r: 20}, {x: 1535, y: 89335.0, r: 20}, {x: 1535, y: 89330.0, r: 20}, {x: 1535, y: 89110.0, r: 20}, {x: 1535, y: 89105.0, r: 20}, {x: 1535, y: 88960.0, r: 20}, {x: 1535, y: 88955.0, r: 20}, {x: 1535, y: 88810.0, r: 20}, {x: 1535, y: 88805.0, r: 20}
+                                    ],
+                                    backgroundColor: '#FF0000',
+                                    pointRadius: 5,
+                                },
+            
+                                {
+                                    label: 'Strong Lines',
+                                    data: [
+            
+                                    ],
+                                    backgroundColor: '#FF6600',
+                                    pointRadius: 5,
+                                },
+            
+                                {
+                                    label: 'Moderate Lines',
+                                    data: [
+            {x: 881, y: 91150.0, r: 6}, {x: 873, y: 91145.0, r: 6}, {x: 881, y: 91140.0, r: 6}, {x: 881, y: 91135.0, r: 6}, {x: 829, y: 89475.0, r: 5}, {x: 829, y: 89470.0, r: 5}, {x: 829, y: 89465.0, r: 5}, {x: 844, y: 89460.0, r: 6}, {x: 829, y: 89455.0, r: 5}, {x: 829, y: 89450.0, r: 5}, {x: 829, y: 89445.0, r: 5}, {x: 829, y: 89440.0, r: 5}, {x: 829, y: 89435.0, r: 5}, {x: 829, y: 89430.0, r: 5}, {x: 829, y: 89425.0, r: 5}, {x: 829, y: 89420.0, r: 5}, {x: 829, y: 89415.0, r: 5}, {x: 866, y: 89400.0, r: 6}, {x: 866, y: 89395.0, r: 6}, {x: 866, y: 89390.0, r: 6}, {x: 866, y: 89385.0, r: 6}, {x: 866, y: 89380.0, r: 6}, {x: 863, y: 89375.0, r: 6}, {x: 826, y: 89370.0, r: 5}, {x: 826, y: 89365.0, r: 5}, {x: 826, y: 89360.0, r: 5}, {x: 826, y: 89355.0, r: 5}, {x: 844, y: 89350.0, r: 6}, {x: 844, y: 89345.0, r: 6}, {x: 826, y: 89340.0, r: 5}, {x: 880, y: 88880.0, r: 6}, {x: 880, y: 88875.0, r: 6}, {x: 880, y: 88870.0, r: 6}, {x: 880, y: 88865.0, r: 6}, {x: 825, y: 88860.0, r: 5}, {x: 825, y: 88855.0, r: 5}, {x: 823, y: 88510.0, r: 5}, {x: 880, y: 88505.0, r: 6}, {x: 880, y: 88500.0, r: 6}, {x: 880, y: 88495.0, r: 6}, {x: 880, y: 88490.0, r: 6}, {x: 880, y: 88485.0, r: 6}, {x: 844, y: 87190.0, r: 6}, {x: 844, y: 87185.0, r: 6}, {x: 844, y: 87180.0, r: 6}, {x: 844, y: 87175.0, r: 6}, {x: 844, y: 87170.0, r: 6}, {x: 844, y: 87165.0, r: 6}, {x: 844, y: 87160.0, r: 6}, {x: 844, y: 87155.0, r: 6}, {x: 844, y: 87150.0, r: 6}, {x: 844, y: 87145.0, r: 6}, {x: 844, y: 87140.0, r: 6}, {x: 844, y: 87135.0, r: 6}, {x: 844, y: 87130.0, r: 6}
+                                    ],
+                                    backgroundColor: '#FFCC00',
+                                    pointRadius: 5,
+                                },
+            
+                                {
+                                    label: 'Weak Lines',
+                                    data: [
+            {x: 713, y: 91635.0, r: 5}, {x: 710, y: 91630.0, r: 5}, {x: 714, y: 91625.0, r: 5}, {x: 730, y: 91620.0, r: 5}, {x: 749, y: 91615.0, r: 5}, {x: 749, y: 91610.0, r: 5}, {x: 748, y: 91605.0, r: 5}, {x: 745, y: 91600.0, r: 5}, {x: 744, y: 91595.0, r: 5}, {x: 730, y: 91590.0, r: 5}, {x: 694, y: 91160.0, r: 5}, {x: 694, y: 91155.0, r: 5}, {x: 546, y: 88905.0, r: 5}, {x: 641, y: 88885.0, r: 5}, {x: 693, y: 88675.0, r: 5}, {x: 693, y: 88670.0, r: 5}, {x: 586, y: 87225.0, r: 5}, {x: 586, y: 87220.0, r: 5}, {x: 586, y: 87215.0, r: 5}, {x: 595, y: 87210.0, r: 5}, {x: 595, y: 87205.0, r: 5}, {x: 595, y: 87200.0, r: 5}, {x: 595, y: 87195.0, r: 5}
+                                    ],
+                                    backgroundColor: '#00CC00',
+                                    pointRadius: 5,
+                                },
+            
+                            ]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                title: {
+                                    display: true,
+                                    text: 'Order Profile Lines by Price and Length'
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(context) {
+                                            return `Price: $${context.parsed.y.toFixed(2)}, Length: ${context.parsed.x}px`;
+                                        }
+                                    }
+                                }
+                            },
+                            scales: {
+                                x: {
+                                    title: {
+                                        display: true,
+                                        text: 'Line Length (pixels)'
+                                    }
+                                },
+                                y: {
+                                    title: {
+                                        display: true,
+                                        text: 'Price (USD)'
+                                    }
+                                }
+                            }
+                        }
+                    });
+
+                    // Order Types Chart
+                    const orderCtx = document.getElementById('orderTypesChart').getContext('2d');
+        
+                    new Chart(orderCtx, {
+                        type: 'pie',
+                        data: {
+                            labels: ['Buy Orders', 'Sell Orders'],
+                            datasets: [{
+                                data: [592, 54],
+                                backgroundColor: ['green', 'red']
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                title: {
+                                    display: true,
+                                    text: 'Limit Order Distribution'
+                                }
+                            }
+                        }
+                    });
+                </script>
+            </div>
+        </body>
+        </html>
+        
